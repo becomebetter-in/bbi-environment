@@ -8,7 +8,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      name: '"TOPIC"',
+      name: '"useState "',
       desciption:
         "Add a 'useEffect' hook to the 'Assignment' component that prints “re-rendered” to the console in each render cycle. Also add a button which triggers the rerender by changing a state."
     };
