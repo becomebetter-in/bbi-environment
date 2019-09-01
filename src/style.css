@@ -1,0 +1,100 @@
+h1, h2, h3, h4 {
+  font-family: 'Open Sans', sans-serif;
+}
+
+p, span, div  {
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+.desciption{
+  font-size: 14px;
+}
+
+
+.card { 
+  height: 30vh;
+
+  background: white;
+  padding: 10px;
+  border: 1px solid rgb(202, 202, 202);
+  border-radius: 5px;
+  box-shadow: 1px 2px 4px rgba(3,27,78,.4);
+
+  
+
+}
+
+.index{
+  display: flex;
+  flex-direction: column;
+  height: inherit;
+}
+
+#root{
+  padding: 10px;
+  
+}
+
+.logo{
+  
+  font-family: 'Roboto:900', sans-serif;
+  font-weight: bold;
+  margin-right: 20px;
+  border: 2px solid black;
+}
+
+.header{
+  display: flex;
+  align-items: center;
+  padding: 5px; 
+  background: #ffcd00;
+  color: black;
+  border-bottom: 1px solid #3D3D3D;
+  box-shadow: 0 2px 4px rgba(3,27,78,.1);
+    
+
+}
+
+.footer{
+  padding: 5px;
+  margin-top: auto;
+  font-size: 12px;  
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+body{
+  margin: 0px;
+  /* Full height */
+  height: 100%; 
+  
+  /* Center and scale the image nicely */
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+body:before{
+  padding:0;
+  content: '';
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  opacity: 0.6;
+  background-position: left;
+  background-repeat: repeat;
+  background-size: contain;
+  position: absolute;
+  background-image: url('https://user-images.githubusercontent.com/22170286/61592776-0237ae80-abd8-11e9-8796-dbb4443c5ef4.png')
+}
+
+html{
+  height: 100%;
+  overflow: hidden;
+
+
+}
