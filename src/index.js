@@ -1,12 +1,27 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React, { Component } from "react";
+import { render } from "react-dom";
+import Assignment from "./Assignment";
+import Headline from "./Headline";
+import "./style.css";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      name: '"TOPIC"',
+      desciption:
+        "Add a 'useEffect' hook to the 'Assignment' component that prints “re-rendered” to the console in each render cycle. Also add a button which triggers the rerender by changing a state."
+    };
+  }
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+  render() {
+    return (
+      <div className="app">
+        <Headline name={this.state.name} desciption={this.state.desciption} />
+        <Assignment />
+      </div>
+    );
+  }
+}
+
+render(<App />, document.getElementById("root"));
