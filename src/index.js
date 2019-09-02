@@ -4,13 +4,14 @@ import Assignment from "./Assignment";
 import Headline from "./Headline";
 import "./style.css";
 
+import text from "../text.json";
+
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      name: '"TOPIC"',
-      desciption:
-        "Add a 'useEffect' hook to the 'Assignment' component that prints “re-rendered” to the console in each render cycle. Also add a button which triggers the rerender by changing a state."
+      name: text.headline,
+      desciption: text.description
     };
   }
 
