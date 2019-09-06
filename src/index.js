@@ -1,16 +1,18 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
-import Assignment from "./Assignment";
-import Headline from "./Headline";
-import "./style.css";
+// import "./style.css";
 
-import text from "../text.json";
+import CodeExample from "./CodeExample";
+import Headline from "./Headline";
+
+import text from "./text.json";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       name: text.headline,
+      type: text.type,
       desciption: text.description
     };
   }
@@ -18,8 +20,12 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        <Headline name={this.state.name} desciption={this.state.desciption} />
-        <Assignment />
+        <Headline
+          name={this.state.name}
+          type={this.state.type}
+          desciption={this.state.desciption}
+        />
+        <CodeExample />
       </div>
     );
   }
