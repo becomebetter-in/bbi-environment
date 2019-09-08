@@ -6,13 +6,13 @@ export default function() {
   const user = "Paul";
 
   return (
+  <UserContext.Provider value={user}>
     <div className="card">
-      <UserContext.Provider value={user}>
         <div>
           <Display />
         </div>
-      </UserContext.Provider>
     </div>
+  </UserContext.Provider>
   );
 }
 
