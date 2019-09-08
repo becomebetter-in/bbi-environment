@@ -3,11 +3,11 @@ import React, { createContext } from "react";
 const UserContext = createContext();
 
 export default function() {
-  const userDetails = { name: "Paul" };
+  const user = "Paul";
 
   return (
     <div className="card">
-      <UserContext.Provider value={userDetails}>
+      <UserContext.Provider value={user}>
         <div>
           <Display />
         </div>
@@ -19,7 +19,7 @@ export default function() {
 function Display() {
   return (
     <UserContext.Consumer>
-      {value => <div>My name is {value.name}.</div>}
+      {value => <div>My name is {value}.</div>}
     </UserContext.Consumer>
   );
 }
