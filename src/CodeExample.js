@@ -1,25 +1,28 @@
-import React, { createContext } from "react";
+import React, { createContext, useContext } from "react";
 
 const UserContext = createContext();
+const ThemeContext = createContext();
 
 export default function() {
-  const userDetails = { name: "Paul" };
+  const user = "Paul";
 
   return (
-    <div className="card">
-      <UserContext.Provider value={userDetails}>
-        <div>
+    <ThemeContext.Provider value={"light"}>
+      <UserContext.Provider value={user}>
+        <div className="card">
           <Display />
         </div>
       </UserContext.Provider>
-    </div>
+    </ThemeContext.Provider>
   );
 }
 
 function Display() {
+  const value = useContext(UserContext);
+  const theme = useContext(ThemeContext);
   return (
-    <UserContext.Consumer>
-      {value => <div>My name is {value.name}.</div>}
-    </UserContext.Consumer>
+    <div>
+      My name is {value} and I use the {theme} theme.
+    </div>
   );
 }
