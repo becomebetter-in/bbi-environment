@@ -1,25 +1,51 @@
-import React, { createContext } from "react";
+import React, { createContext, useState } from "react";
 
 const UserContext = createContext();
 
 export default function() {
-  const userDetails = { name: "Paul" };
+  const [localCount, setlocalCounter] = useState(0);
+  const [user, changeUser] = useState("Paul");
 
   return (
-    <div className="card">
-      <UserContext.Provider value={userDetails}>
+    <UserContext.Provider value={{ user, changeUser }}>
+      <div className="card">
+        <div>
+          <button onClick={() => setlocalCounter(localCount + 1)}>
+            change local state: {localCount}
+          </button>
+        </div>
         <div>
           <Display />
         </div>
-      </UserContext.Provider>
-    </div>
+        <div>
+          <Profile />
+        </div>
+      </div>
+    </UserContext.Provider>
   );
 }
 
 function Display() {
+  console.log("render display");
   return (
     <UserContext.Consumer>
-      {value => <div>My name is {value.name}.</div>}
+      {value => <div>My name is {value.user}.</div>}
+    </UserContext.Consumer>
+  );
+}
+
+function Profile() {
+  console.log("render profile");
+  return (
+    <UserContext.Consumer>
+      {value => (
+        <div>
+          <div>userProfile: {value.user}</div>
+          <button onClick={() => value.changeUser("Paula")}>
+            change name to "Paula"
+          </button>
+        </div>
+      )}
     </UserContext.Consumer>
   );
 }
