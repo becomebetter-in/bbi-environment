@@ -9,7 +9,6 @@ export default function() {
     <div className="card">
       <UserContext.Provider value={userDetails}>
         <div>
-          <button onClick={() => setTick(7)}>click{tick}</button>
           <Display />
         </div>
       </UserContext.Provider>
