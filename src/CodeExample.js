@@ -1,23 +1,26 @@
 import React, { createContext } from "react";
 
-const NumberContext = createContext();
+const UserContext = createContext();
 
 export default function() {
+  const userDetails = { name: "Paul" };
+
   return (
     <div className="card">
-      <NumberContext.Provider value={42}>
+      <UserContext.Provider value={userDetails}>
         <div>
+          <button onClick={() => setTick(7)}>click{tick}</button>
           <Display />
         </div>
-      </NumberContext.Provider>
+      </UserContext.Provider>
     </div>
   );
 }
 
 function Display() {
   return (
-    <NumberContext.Consumer>
-      {value => <div>The answer is {value}.</div>}
-    </NumberContext.Consumer>
+    <UserContext.Consumer>
+      {value => <div>My name is {value.name}.</div>}
+    </UserContext.Consumer>
   );
 }
