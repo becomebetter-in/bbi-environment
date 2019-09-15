@@ -26,7 +26,6 @@ export default function() {
 }
 
 function Display() {
-  console.log("render display");
   return (
     <UserContext.Consumer>
       {value => <div>My name is {value.user}.</div>}
@@ -35,7 +34,6 @@ function Display() {
 }
 
 function Profile() {
-  console.log("render profile");
   return (
     <UserContext.Consumer>
       {value => (
