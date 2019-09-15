@@ -11,7 +11,7 @@ export default function() {
       <div className="card">
         <div>
           <button onClick={() => setlocalCounter(localCount + 1)}>
-            change local state: {localCount}
+            increase counter: {localCount}
           </button>
         </div>
         <div>
