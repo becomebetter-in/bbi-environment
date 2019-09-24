@@ -1,5 +1,5 @@
 {
-  "headline": "Topic",
-  "type": "Type",
-  "description": "Description"
+  "headline": "Use State",
+  "type": "Assignment",
+  "description": "In this assignment you creating a counter with increment, decrement and a reset button."
 }
